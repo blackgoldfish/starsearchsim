@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Button?>
+<GridPane id="configView" fx:id="configView" xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.gatech.Controller.ConfigController"
+          prefHeight="400.0" prefWidth="600.0" alignment="center" hgap="10" vgap="15">
+
+
+    <Text text="Configuration:" style="-fx-font-weight: bold;"
+          GridPane.columnIndex="0" GridPane.rowIndex="0"
+          GridPane.columnSpan="2"/>
+
+    <Label text="Scenario Files Dir Path:"
+           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+    <TextField fx:id="txtSceneFilePath"
+            GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Button text="Browse ..." onAction="#selectSceneFileDir" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+    <Label text="Save Report Dir Path:"
+           GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <TextField fx:id="txtReportDirFilePath"
+            GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Button text="Browse ..."  onAction="#selectReportFileDir" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+
+    <HBox GridPane.rowIndex="3" GridPane.columnSpan="3" alignment="CENTER">
+        <Button style="-fx-font-weight: bold;" minWidth="50" onAction="#saveConfig"  text="OK"/>
+        <Button style="-fx-font-weight: bold;" minWidth="50" onAction="#exitConfig"  text="Cancel"/>
+    </HBox>
+
+</GridPane>

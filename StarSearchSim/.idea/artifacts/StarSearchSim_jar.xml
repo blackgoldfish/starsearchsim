@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="StarSearchSim:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/StarSearchSim_jar</output-path>
+    <root id="archive" name="StarSearchSim.jar">
+      <element id="module-output" name="StarSearchSim" />
+    </root>
+  </artifact>
+</component>

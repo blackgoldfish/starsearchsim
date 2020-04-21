@@ -1,0 +1,1 @@
+RegionSize - 40,PotentialCut - 40,ActualCut - 6,TurnsCompleted - 7

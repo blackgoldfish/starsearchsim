@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.Integer?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.gatech.Controller.ManualController"
+            prefHeight="450.0" prefWidth="160.0">
+    <VBox fx:id="manualBox">
+        <Label text="Manual Control" fx:id="manualLabel" textAlignment="LEFT"><font>
+            <Font name="System Bold" size="14.0" />
+        </font> <padding>
+            <Insets bottom="5" left="50" right="5" top="5" />
+        </padding></Label>
+        <TitledPane text="Steer">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <VBox spacing="3">
+                <HBox>
+                    <GridPane>
+                        <Button fx:id = "northwestBtn"  onAction="#onClickNW" GridPane.columnIndex="0" GridPane.rowIndex="0" minHeight="40" maxHeight="40" minWidth="40" maxWidth="40" >
+                            <graphic>
+                                <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Images/northwest.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id = "northBtn" onAction="#onClickN" GridPane.columnIndex="1" GridPane.rowIndex="0" minHeight="40" maxHeight="40" minWidth="40" maxWidth="40" >
+                            <graphic>
+                                <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Images/north.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id = "northeastBtn" onAction="#onClickNE" GridPane.columnIndex="2" GridPane.rowIndex="0" minHeight="40" maxHeight="40" minWidth="40" maxWidth="40" >
+                            <graphic>
+                                <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Images/northeast.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id = "westBtn" onAction="#onClickW" GridPane.columnIndex="0" GridPane.rowIndex="1" minHeight="40" maxHeight="40" minWidth="40" maxWidth="40" >
+                            <graphic>
+                                <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Images/west.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id = "eastBtn" onAction="#onClickE" GridPane.columnIndex="2" GridPane.rowIndex="1" minHeight="40" maxHeight="40" minWidth="40" maxWidth="40" >
+                            <graphic>
+                                <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Images/east.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id = "southwestBtn" onAction="#onClickSW" GridPane.columnIndex="0" GridPane.rowIndex="2" minHeight="40" maxHeight="40" minWidth="40" maxWidth="40" >
+                            <graphic>
+                                <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Images/southwest.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id = "southBtn" onAction="#onClickS" GridPane.columnIndex="1" GridPane.rowIndex="2" minHeight="40" maxHeight="40" minWidth="40" maxWidth="40" >
+                            <graphic>
+                                <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Images/south.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id = "southeastBtn" onAction="#onClickSE" GridPane.columnIndex="2" GridPane.rowIndex="2" minHeight="40" maxHeight="40" minWidth="40" maxWidth="40" >
+                            <graphic>
+                                <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Images/southeast.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </GridPane>
+                </HBox>
+                <Label fx:id = "directionLabel"></Label>
+                <Button fx:id = "steerSubmitBtn" onAction="#submitSteer" text="Submit" />
+            </VBox>
+
+        </TitledPane>
+        <TitledPane text="Scan"><font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+            <Button fx:id = "scanSubmitBtn" onAction="#submitScan" text="Submit" />
+        </TitledPane>
+        <TitledPane text="Thrust">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <HBox>
+                <ComboBox fx:id = "stepChoice">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <Integer fx:value="1" />
+                            <Integer fx:value="2" />
+                            <Integer fx:value="3" />
+                        </FXCollections>
+                    </items>
+                    <value>
+                        <Integer fx:value="1" />
+                    </value>
+                </ComboBox> <Button fx:id = "thrustSubmitBtn" onAction="#submitThrust" text="Submit" />
+            </HBox>
+        </TitledPane>
+        <TitledPane text="Pass">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <Button fx:id = "passSubmitBtn" onAction="#submitPass" text="Submit" />
+        </TitledPane>
+    </VBox>
+
+</AnchorPane>

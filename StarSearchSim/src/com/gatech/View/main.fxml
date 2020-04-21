@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gatech.Controller.MainController">
+    <top>
+        <MenuBar>
+            <Menu style="-fx-font-weight: bold; -fx-text-fill: black; -fx-font-size: 13" text="File">
+                <MenuItem onAction="#loadSpaceRegionGridPane" text="Load scenario file..." />
+                <MenuItem onAction="#exitSimulator" text="Exit" />
+            </Menu>
+            <Menu style="-fx-font-weight: bold; -fx-text-fill: black; -fx-font-size: 13" text="Tools">
+                <MenuItem onAction="#loadConfigView" text="Configure..." />
+            </Menu>
+            <Menu style="-fx-font-weight: bold; -fx-text-fill: black; -fx-font-size: 13" text="Help">
+                <MenuItem onAction="#showHelp" text="Help..." />
+                <MenuItem onAction="#showAbout" text="About..." />
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <GridPane id="gpSpaceRegion" fx:id="gpSpaceRegion">
+        </GridPane>
+    </center>
+    <right>
+        <VBox minWidth="220" spacing="10">
+            <VBox minHeight="200">
+                <VBox.margin>
+                    <Insets left="10.0" />
+                    <Insets right="10.0" />
+                </VBox.margin>
+
+                <Label text="Status" textAlignment="CENTER"> <font>
+                    <Font name="System Bold" size="14.0" />
+                </font> <padding>
+                    <Insets bottom="5" left="50" right="5" top="5" />
+                </padding> </Label>
+                <Separator fx:id="separator"/>
+                <Label fx:id="droneStatusLabel" text="" textAlignment="LEFT" />
+                <Label fx:id="droneActionStatusLabel" text="" textAlignment="LEFT" />
+                <Separator fx:id="separator"/>
+                <Label fx:id="whitespace1" text="" textAlignment="LEFT" />
+                <Label fx:id="squaresProgressLabel" text="0 explored/11 safe squares" textAlignment="LEFT" />
+                <HBox>
+                    <ProgressBar fx:id="squaresProgressBar" progress="0.0" />
+                    <ProgressIndicator fx:id="squaresProgressIndicator" progress="0.0" />
+                </HBox>
+                <Label fx:id="whitespace2" text="" textAlignment="LEFT" />
+                <Label fx:id="turnsProgressLabel" text="0 completed/3 total turns" textAlignment="CENTER" />
+                <HBox>
+                    <ProgressBar fx:id="turnsProgressBar" progress="0.0" />
+                    <ProgressIndicator fx:id="turnsProgressIndicator" progress="0.0" />
+                </HBox>
+                <Label fx:id="whitespace2" text="" textAlignment="LEFT" />
+                <Label fx:id="dronesProgressLabel" text="3 of 3 drones active" textAlignment="CENTER" />
+                <HBox>
+                    <ProgressBar fx:id="dronesProgressBar" progress="0.0" />
+
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </right>
+    <bottom>
+        <HBox spacing="12" style="-fx-border-color: black; -fx-border-style: solid">
+            <padding>
+                <Insets bottom="25" left="400" right="25" top="25" />
+            </padding>
+            <Button fx:id="nextBtn" text="Next" onAction="#nextBtnPress"><font>
+                <Font name="System Bold" size="13.0" />
+            </font></Button>
+            <Button fx:id="fastForwardActionBtn"  text="Fast-Forward" onAction="#fastForwardActionBtnPress"><font>
+                <Font name="System Bold" size="13.0" />
+            </font></Button>
+            <Button fx:id="stopActionBtn"  onAction="#loadReportView" text="Stop"><font>
+                <Font name="System Bold" size="13.0" />
+            </font></Button>
+        </HBox>
+    </bottom>
+</BorderPane>

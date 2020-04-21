@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.gatech.Controller.ReportController"
+            prefHeight="400.0" prefWidth="600.0">
+    <center>
+        <VBox fx:id="reportBox">
+
+        </VBox>
+    </center>
+    <bottom>
+        <HBox style="-fx-border-color: black; -fx-border-style: solid" spacing="12">
+        <padding>
+            <Insets top="5" left="175" right="5" bottom="5"/>
+        </padding>
+            <Button text="Close" onAction="#closeReportWindow">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Button>
+        </HBox>
+    </bottom>
+
+</BorderPane>
